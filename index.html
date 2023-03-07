@@ -130,75 +130,75 @@
   }
   
   function showMadLib () {
-    
+  
     blankMadLib()
     
     for (let a = 0; a < genIngVerbs.length; a++) {
-    	let word = `<span class="special"${genIngVerbs[a]}<span>`
-      chosenML = chosenML.replace('{{-ing verb}}', word)
+      let word = `<span class="special">${genIngVerbs[a]}</span>`
+			chosenML = chosenML.replace('{{-ing verb}}', word)
     }
     
     for (let b = 0; b < genCourses.length; b++) {
-    	let word = `<span class="special"${genCourses[b]}<span>`
-      chosenML = chosenML.replace('{{course}}', word)
+      let word = `<span class="special">${genCourses[b]}</span>`
+			chosenML = chosenML.replace('{{course}}', word)
     }
     
     for (let c = 0; c < genAdjectives.length; c++) {
-    	let word = `<span class="special"${genAdjectives[c]}<span>`
-      chosenML = chosenML.replace('{{adj}}', word)
+      let word = `<span class="special">${genAdjectives[c]}</span>`
+			chosenML = chosenML.replace('{{adj}}', word)
     }
     
     for (let d = 0; d < genNouns.length; d++) {
-    	let word = `<span class="special"${genNouns[d]}<span>`
-      chosenML = chosenML.replace('{{pl noun}}', word)
+      let word = `<span class="special">${genNouns[d]}</span>`
+			chosenML = chosenML.replace('{{pl noun}}', word)
     }
     
     for (let e = 0; e < genEdVerbs.length; e++) {
-    	let word = `<span class="special"${genEdVerbs[e]}<span>`
-      chosenML = chosenML.replace('{{-ed verb}}', word)
+    	let word = `<span class="special">${genEdVerbs[e]}</span>`
+			chosenML = chosenML.replace('{{-ed verb}}', word)
     }
     
     for (let f = 0; f < genFeelings.length; f++) {
-    	let word = `<span class="special"${genFeelings[f]}<span>`
-      chosenML = chosenML.replace('{{feeling}}', word)
+      let word = `<span class="special">${genFeelings[f]}</span>`
+			chosenML = chosenML.replace('{{feeling}}', word)
     }
     
     for (let g = 0; g < genPeople.length; g++) {
-    	let word = `<span class="special"${genPeople[g]}<span>`
-      chosenML = chosenML.replace('{{person}}', word)
+      let word = `<span class="special">${genPeople[g]}</span>`
+			chosenML = chosenML.replace('{{person}}', word)
     }
     
     for (let h = 0; h < genPlaces.length; h++) {
-    	let word = `<span class="special"${genPlaces[a]}<span>`
-      chosenML = chosenML.replace('{{place}}', word)
+      let word = `<span class="special">${genPlaces[h]}</span>`
+			chosenML = chosenML.replace('{{place}}', word)
     }
     
-    madlib.innterHTML = chosenML
+    madlib.innerHTML = chosenML
     button.textContent = 'reset'
-    button.onclick = onreset
+    button.onclick = reset
+    
   }
   
   function reset () {
-    
-    chosen ML = randomItem(madlibs)
+    chosenML = randomItem(madlibs)
     
     genIngVerbs = []
-    genCourses = []
-    genAdjectives = []
-    genNouns = []
-    genEdVerbs = []
-    genFeelings = []
-    genPeople = []
-    genPlaces = []
+		genCourses = []
+		genAdjectives = []
+		genNouns = []
+		genEdVerbs = []
+		genFeelings = []
+		genPeople = []
+		genPlaces = []
     
     blankMadLib()
-    
   }
   
   function setup () {
     
     button.onclick = blankMadLib
     button.display = 'none'
+    console.log(chosenML)
   }
   
   window.addEventListener('load', setup)
